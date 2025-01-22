@@ -1,163 +1,168 @@
 export const questions = {
   questions: [
-    // Java Hard - Generics
+    // React Hard - Context API
     {
       id: 1,
       type: "multiple-choice",
-      question: "What is the wildcard '?' used for in Java Generics?",
+      question: "What is the purpose of React's Context API?",
       options: [
-        "To represent any type",
-        "To restrict type parameters",
-        "To declare raw types",
-        "To enable type safety"
+        "To manage global state",
+        "To style components",
+        "To handle HTTP requests",
+        "To optimize rendering"
       ],
-      correctAnswers: ["To represent any type"],
+      correctAnswers: ["To manage global state"],
       multipleAnswers: false,
-      note: "Generics"
+      note: "Context API"
     },
-    // Java Hard - Streams
+    // React Hard - Custom Hooks
     {
       id: 2,
       type: "fill-in-the-blanks",
-      question: "The __ method in Java Streams is used to combine multiple elements into a single result.",
-      blanks: ["reduce"],
-      note: "Streams"
+      question: "A custom hook's name in React must start with the __ prefix.",
+      blanks: ["use"],
+      note: "Custom Hooks"
     },
-    // Java Hard - Concurrency
+    // React Hard - Error Boundaries
     {
       id: 3,
       type: "multiple-choice",
-      question: "Which of these classes is used to manage a pool of threads in Java?",
-      options: ["Thread", "ExecutorService", "ThreadGroup", "Runnable"],
-      correctAnswers: ["ExecutorService"],
+      question: "Which lifecycle method is used in class components to handle errors in React?",
+      options: [
+        "componentDidCatch",
+        "componentDidMount",
+        "render",
+        "getDerivedStateFromError"
+      ],
+      correctAnswers: ["componentDidCatch"],
       multipleAnswers: false,
-      note: "Concurrency"
+      note: "Error Boundaries"
     },
-    // Java Hard - Advanced Collections
+    // React Hard - Portals
     {
       id: 4,
       type: "matching",
-      question: "Match the advanced collection types to their descriptions",
-      leftItems: ["ConcurrentHashMap", "TreeSet", "PriorityQueue"],
+      question: "Match the React Portal concepts with their characteristics",
+      leftItems: ["Portals", "Root DOM", "Event Bubbling"],
       rightItems: [
-        "Thread-safe map",
-        "Sorted set",
-        "Elements ordered by priority"
+        "Render outside root",
+        "Main React container",
+        "Behaves normally"
       ],
       correctMatches: {
-        ConcurrentHashMap: "Thread-safe map",
-        TreeSet: "Sorted set",
-        PriorityQueue: "Elements ordered by priority"
+        Portals: "Render outside root",
+        RootDOM: "Main React container",
+        EventBubbling: "Behaves normally"
       },
-      note: "Advanced Collections"
+      note: "Portals"
     },
-    // Java Hard - Memory Management
+    // React Hard - Concurrent Features
     {
       id: 5,
       type: "fill-in-the-blanks",
-      question: "The __ space in JVM is used to store metadata about classes.",
-      blanks: ["Metaspace"],
-      note: "Memory Management"
+      question: "React's __ feature allows interruption of rendering for higher priority updates.",
+      blanks: ["Concurrent Mode"],
+      note: "Concurrent Features"
     },
-    // Java Hard - Reflection
+    // React Hard - Suspense
     {
       id: 6,
       type: "multiple-choice",
-      question: "Which method is used to create a new instance of a class using reflection?",
-      options: ["newInstance()", "newObject()", "createInstance()", "reflectInstance()"],
-      correctAnswers: ["newInstance()"],
+      question: "Which of these is NOT a valid use case for React Suspense?",
+      options: [
+        "Code Splitting",
+        "Lazy Loading",
+        "Error Handling",
+        "Data Fetching"
+      ],
+      correctAnswers: ["Error Handling"],
       multipleAnswers: false,
-      note: "Reflection"
+      note: "Suspense"
     },
-    // Java Hard - Functional Programming
+    // React Hard - Reconciliation
     {
       id: 7,
       type: "fill-in-the-blanks",
-      question: "The __ interface in Java is a functional interface representing a predicate (boolean-valued function).",
-      blanks: ["Predicate"],
-      note: "Functional Programming"
+      question: "React's reconciliation algorithm uses the __ key to identify elements.",
+      blanks: ["unique"],
+      note: "Reconciliation"
     },
-    // Java Hard - Serialization
+    // React Hard - Server-Side Rendering (SSR)
     {
       id: 8,
       type: "multiple-choice",
-      question: "What happens if a non-serializable class contains a reference to a serializable class?",
-      options: [
-        "Serialization succeeds without issues",
-        "Serialization fails with an exception",
-        "The serializable field is ignored",
-        "Only the serializable field is serialized"
-      ],
-      correctAnswers: ["Serialization fails with an exception"],
+      question: "Which library is commonly used for server-side rendering in React?",
+      options: ["Redux", "Next.js", "Webpack", "React Router"],
+      correctAnswers: ["Next.js"],
       multipleAnswers: false,
-      note: "Serialization"
+      note: "SSR"
     },
-    // Java Hard - Advanced Streams
+    // React Hard - Hydration
     {
       id: 9,
       type: "fill-in-the-blanks",
-      question: "The __ method in Java Streams can be used to produce a collection from a stream.",
-      blanks: ["collect"],
-      note: "Advanced Streams"
+      question: "React's __ process attaches event listeners to a pre-rendered DOM.",
+      blanks: ["hydration"],
+      note: "Hydration"
     },
-    // Java Hard - Class Loaders
+    // React Hard - Performance Optimization
     {
       id: 10,
       type: "multiple-choice",
-      question: "Which class loader is responsible for loading the Java API classes?",
-      options: ["System ClassLoader", "Extension ClassLoader", "Bootstrap ClassLoader", "Custom ClassLoader"],
-      correctAnswers: ["Bootstrap ClassLoader"],
+      question: "Which of these is used in React to prevent unnecessary re-renders?",
+      options: ["useMemo", "useEffect", "useReducer", "useRef"],
+      correctAnswers: ["useMemo"],
       multipleAnswers: false,
-      note: "Class Loaders"
+      note: "Performance Optimization"
     },
-    // Java Hard - Multithreading
+    // React Hard - Strict Mode
     {
       id: 11,
       type: "fill-in-the-blanks",
-      question: "The __ keyword ensures visibility and ordering of variables in multithreaded programs.",
-      blanks: ["volatile"],
-      note: "Multithreading"
+      question: "React's __ mode helps identify potential issues in an application.",
+      blanks: ["Strict"],
+      note: "Strict Mode"
     },
-    // Java Hard - JDBC Transactions
+    // React Hard - Code Splitting
     {
       id: 12,
       type: "multiple-choice",
-      question: "Which method is used to roll back a transaction in JDBC?",
-      options: ["rollback()", "undo()", "reset()", "revert()"],
-      correctAnswers: ["rollback()"],
+      question: "Which method is commonly used for code splitting in React?",
+      options: ["React.lazy", "useEffect", "useReducer", "useContext"],
+      correctAnswers: ["React.lazy"],
       multipleAnswers: false,
-      note: "JDBC Transactions"
+      note: "Code Splitting"
     },
-    // Java Hard - Advanced Exception Handling
+    // React Hard - Fiber Architecture
     {
       id: 13,
       type: "fill-in-the-blanks",
-      question: "A __ block in Java ensures that resources are closed after usage.",
-      blanks: ["try-with-resources"],
-      note: "Advanced Exception Handling"
+      question: "React Fiber splits rendering work into __ to improve performance.",
+      blanks: ["chunks"],
+      note: "Fiber Architecture"
     },
-    // Java Hard - Advanced Polymorphism
+    // React Hard - Higher-Order Components (HOC)
     {
       id: 14,
       type: "multiple-choice",
-      question: "Which of these demonstrates runtime polymorphism in Java?",
+      question: "Which of these describes a Higher-Order Component in React?",
       options: [
-        "Overriding a method in a subclass",
-        "Overloading a method",
-        "Using generics",
-        "Casting objects"
+        "A component that fetches data",
+        "A component that manages state",
+        "A function that returns a component",
+        "A component that handles errors"
       ],
-      correctAnswers: ["Overriding a method in a subclass"],
+      correctAnswers: ["A function that returns a component"],
       multipleAnswers: false,
-      note: "Advanced Polymorphism"
+      note: "HOC"
     },
-    // Java Hard - Garbage Collection
+    // React Hard - Immutable State
     {
       id: 15,
       type: "fill-in-the-blanks",
-      question: "In Java, the __ method of System class can be used to suggest garbage collection.",
-      blanks: ["gc"],
-      note: "Garbage Collection"
+      question: "In React, state is considered immutable to ensure predictable __ updates.",
+      blanks: ["UI"],
+      note: "Immutable State"
     }
   ]
 };

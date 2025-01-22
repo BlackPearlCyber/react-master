@@ -1,166 +1,177 @@
 export const questions = {
   questions: [
-    // Java Medium - Generics
+    // React Medium - JSX
     {
       id: 1,
       type: "multiple-choice",
-      question: "Which of these correctly demonstrates the use of generics in Java?",
+      question: "What does JSX stand for in React?",
       options: [
-        "List<int> list = new ArrayList<>();",
-        "List<String> list = new ArrayList<>();",
-        "List list = new ArrayList<>();",
-        "List<> list = new ArrayList<>();"
+        "JavaScript Extension",
+        "JavaScript XML",
+        "JavaScript Syntax",
+        "Java Syntax Extension"
       ],
-      correctAnswers: ["List<String> list = new ArrayList<>();"],
+      correctAnswers: ["JavaScript XML"],
       multipleAnswers: false,
-      note: "Generics"
+      note: "JSX"
     },
-    // Java Medium - Streams
+    // React Medium - Props
     {
       id: 2,
       type: "fill-in-the-blanks",
-      question: "In Java Streams, the __ method is used to transform each element in a stream.",
-      blanks: ["map"],
-      note: "Streams"
+      question: "React components use __ to pass data from a parent to a child component.",
+      blanks: ["props"],
+      note: "Props"
     },
-    // Java Medium - Multithreading
+    // React Medium - State
     {
       id: 3,
       type: "multiple-choice",
-      question: "Which method is used to start a thread in Java?",
-      options: ["run()", "start()", "execute()", "begin()"],
-      correctAnswers: ["start()"],
+      question: "Which hook is used to manage state in a functional React component?",
+      options: ["useState", "useEffect", "useReducer", "useMemo"],
+      correctAnswers: ["useState"],
       multipleAnswers: false,
-      note: "Multithreading"
+      note: "State"
     },
-    // Java Medium - Collections
+    // React Medium - Component Lifecycle
     {
       id: 4,
       type: "matching",
-      question: "Match the Java collection types to their implementations",
-      leftItems: ["List", "Set", "Map"],
-      rightItems: ["ArrayList", "HashSet", "HashMap"],
+      question: "Match the React lifecycle methods with their purpose",
+      leftItems: ["componentDidMount", "componentWillUnmount", "render"],
+      rightItems: [
+        "Called after the component mounts",
+        "Called before the component unmounts",
+        "Used to define UI"
+      ],
       correctMatches: {
-        List: "ArrayList",
-        Set: "HashSet",
-        Map: "HashMap"
+        componentDidMount: "Called after the component mounts",
+        componentWillUnmount: "Called before the component unmounts",
+        render: "Used to define UI"
       },
-      note: "Collections"
+      note: "Lifecycle"
     },
-    // Java Medium - Interfaces
+    // React Medium - Event Handling
     {
       id: 5,
       type: "fill-in-the-blanks",
-      question: "A Java interface can have __ methods by default.",
-      blanks: ["abstract and default"],
-      note: "Interfaces"
+      question: "In React, events are handled using the __ attribute.",
+      blanks: ["onClick"],
+      note: "Event Handling"
     },
-    // Java Medium - Abstract Classes
+    // React Medium - Conditional Rendering
     {
       id: 6,
       type: "multiple-choice",
-      question: "Which of these statements about abstract classes in Java is true?",
+      question: "Which of these techniques can be used for conditional rendering in React?",
       options: [
-        "Abstract classes cannot have concrete methods.",
-        "An abstract class can have a constructor.",
-        "An abstract class cannot be extended.",
-        "Abstract classes must have at least one abstract method."
-      ],
-      correctAnswers: ["An abstract class can have a constructor."],
-      multipleAnswers: false,
-      note: "Abstract Classes"
-    },
-    // Java Medium - Functional Interfaces
-    {
-      id: 7,
-      type: "fill-in-the-blanks",
-      question: "The __ annotation is used to indicate a functional interface in Java.",
-      blanks: ["@FunctionalInterface"],
-      note: "Functional Interfaces"
-    },
-    // Java Medium - Lambda Expressions
-    {
-      id: 8,
-      type: "multiple-choice",
-      question: "Which of these is a valid lambda expression?",
-      options: [
-        "(x, y) -> x + y",
-        "x -> { return x; }",
-        "() -> System.out.println(\"Hello\")",
+        "Ternary operators",
+        "Logical AND operators",
+        "if statements",
         "All of the above"
       ],
       correctAnswers: ["All of the above"],
       multipleAnswers: false,
-      note: "Lambda Expressions"
+      note: "Conditional Rendering"
     },
-    // Java Medium - Exception Handling
+    // React Medium - Lists and Keys
+    {
+      id: 7,
+      type: "fill-in-the-blanks",
+      question: "React uses the __ prop to uniquely identify list items.",
+      blanks: ["key"],
+      note: "Lists and Keys"
+    },
+    // React Medium - Controlled Components
+    {
+      id: 8,
+      type: "multiple-choice",
+      question: "What defines a controlled component in React?",
+      options: [
+        "It is controlled by the parent component",
+        "It is controlled by its own state",
+        "It is controlled by React's state",
+        "Its value is controlled by React via props"
+      ],
+      correctAnswers: ["Its value is controlled by React via props"],
+      multipleAnswers: false,
+      note: "Controlled Components"
+    },
+    // React Medium - React Router
     {
       id: 9,
       type: "multiple-choice",
-      question: "Which exception is thrown when dividing by zero in Java?",
-      options: ["ArithmeticException", "NullPointerException", "IOException", "NumberFormatException"],
-      correctAnswers: ["ArithmeticException"],
+      question: "Which component is used to define a route in React Router?",
+      options: ["Route", "Link", "Switch", "BrowserRouter"],
+      correctAnswers: ["Route"],
       multipleAnswers: false,
-      note: "Exception Handling"
+      note: "React Router"
     },
-    // Java Medium - File I/O
+    // React Medium - Forms
     {
       id: 10,
       type: "fill-in-the-blanks",
-      question: "To read text from a file in Java, you can use the __ class.",
-      blanks: ["BufferedReader"],
-      note: "File I/O"
+      question: "To handle form submission in React, you use the __ event.",
+      blanks: ["onSubmit"],
+      note: "Forms"
     },
-    // Java Medium - Annotations
+    // React Medium - Fragment
     {
       id: 11,
       type: "multiple-choice",
-      question: "Which of these is a built-in annotation in Java?",
-      options: ["@Override", "@Entity", "@Service", "@Autowired"],
-      correctAnswers: ["@Override"],
+      question: "What is the purpose of React.Fragment?",
+      options: [
+        "To group multiple elements without adding extra DOM nodes",
+        "To handle fragments of state",
+        "To optimize React components",
+        "To enable code splitting"
+      ],
+      correctAnswers: [
+        "To group multiple elements without adding extra DOM nodes"
+      ],
       multipleAnswers: false,
-      note: "Annotations"
+      note: "Fragment"
     },
-    // Java Medium - Reflection
+    // React Medium - Lazy Loading
     {
       id: 12,
       type: "fill-in-the-blanks",
-      question: "The __ class in Java is used to access metadata of classes at runtime.",
-      blanks: ["Class"],
-      note: "Reflection"
+      question: "React.lazy is used to __ load components.",
+      blanks: ["lazy"],
+      note: "Lazy Loading"
     },
-    // Java Medium - Polymorphism
+    // React Medium - Context API
     {
       id: 13,
       type: "multiple-choice",
-      question: "What type of polymorphism does method overriding represent in Java?",
-      options: ["Static Polymorphism", "Dynamic Polymorphism", "Compile-time Polymorphism", "Overloading"],
-      correctAnswers: ["Dynamic Polymorphism"],
+      question: "Which React method is used to provide context to components?",
+      options: ["Context.Provider", "useContext", "createContext", "Context.Consumer"],
+      correctAnswers: ["Context.Provider"],
       multipleAnswers: false,
-      note: "Polymorphism"
+      note: "Context API"
     },
-    // Java Medium - Serialization
+    // React Medium - Refs
     {
       id: 14,
       type: "fill-in-the-blanks",
-      question: "A class must implement the __ interface to enable serialization in Java.",
-      blanks: ["Serializable"],
-      note: "Serialization"
+      question: "The React __ feature is used to directly access DOM nodes.",
+      blanks: ["refs"],
+      note: "Refs"
     },
-    // Java Medium - JDBC
+    // React Medium - Optimization
     {
       id: 15,
       type: "multiple-choice",
-      question: "Which of these is used to load a JDBC driver in Java?",
+      question: "Which of these React tools can be used for performance optimization?",
       options: [
-        "Class.forName()",
-        "DriverManager.load()",
-        "Connection.initialize()",
-        "JDBC.loadDriver()"
+        "React.memo",
+        "useCallback",
+        "useMemo",
+        "All of the above"
       ],
-      correctAnswers: ["Class.forName()"],
+      correctAnswers: ["All of the above"],
       multipleAnswers: false,
-      note: "JDBC"
+      note: "Optimization"
     }
   ]
 };

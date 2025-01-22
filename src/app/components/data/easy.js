@@ -1,140 +1,140 @@
 export const questions = {
   questions: [
-    // Java Basics - Syntax
+    // react Basics - Syntax
     {
       id: 1,
       type: "fill-in-the-blanks",
-      question: "In Java, every application starts with the __ method.",
-      blanks: ["main"],
+      question: "In React, every application starts with the __ method.",
+      blanks: ["render"],
       note: "Syntax"
     },
-    // Java Basics - Data Types
+    // React Basics - Data Types
     {
       id: 2,
       type: "multiple-choice",
-      question: "Which data type is used to create a variable that holds decimal numbers?",
-      options: ["int", "float", "String", "boolean"],
-      correctAnswers: ["float"],
+      question: "Which data type is used to manage component state in React?",
+      options: ["string", "number", "object", "boolean"],
+      correctAnswers: ["object"],
       multipleAnswers: false,
       note: "Data Types"
     },
-    // Java Basics - Variables
+    // React Basics - Variables
     {
       id: 3,
       type: "fill-in-the-blanks",
-      question: "To declare a constant in Java, use the __ keyword.",
-      blanks: ["final"],
+      question: "To declare a constant in React, use the __ keyword.",
+      blanks: ["const"],
       note: "Variables"
     },
-    // Java Basics - Loops
+    // React Basics - Loops
     {
       id: 4,
       type: "fill-in-the-blanks",
-      question: "A __ loop is used to execute a block of code a known number of times.",
-      blanks: ["for"],
+      question: "A __ loop is commonly used to render lists in React.",
+      blanks: ["map"],
       note: "Loops"
     },
-    // Java Basics - Conditionals
+    // React Basics - Conditionals
     {
       id: 5,
       type: "fill-in-the-blanks",
-      question: "The __ keyword is used in Java to execute one block of code out of multiple options.",
-      blanks: ["switch"],
+      question: "The __ operator is used in React for conditional rendering.",
+      blanks: ["ternary"],
       note: "Conditionals"
     },
-    // Java Basics - Arrays
+    // React Basics - Arrays
     {
       id: 6,
       type: "multiple-choice",
-      question: "Which of these correctly initializes an array in Java?",
-      options: ["int arr = {1, 2, 3};", "int[] arr = new int[3];", "int arr[] = [1, 2, 3];", "int arr(3);"],
-      correctAnswers: ["int[] arr = new int[3];"],
+      question: "Which method is used to add elements to an array in React?",
+      options: ["push", "pop", "add", "insert"],
+      correctAnswers: ["push"],
       multipleAnswers: false,
       note: "Arrays"
     },
-    // Java Basics - OOP Concepts
+    // React Basics - Components
     {
       id: 7,
       type: "multiple-choice",
-      question: "Which of these is NOT a principle of Object-Oriented Programming?",
-      options: ["Encapsulation", "Polymorphism", "Inheritance", "Compilation"],
-      correctAnswers: ["Compilation"],
+      question: "Which of these is NOT a valid type of React component?",
+      options: ["Class Component", "Function Component", "Pure Component", "Virtual Component"],
+      correctAnswers: ["Virtual Component"],
       multipleAnswers: false,
-      note: "OOP"
+      note: "Components"
     },
-    // Java Basics - Access Modifiers
+    // React Basics - Props
     {
       id: 8,
       type: "fill-in-the-blanks",
-      question: "The __ access modifier makes a member accessible only within its own class.",
-      blanks: ["private"],
-      note: "Access Modifiers"
+      question: "Props in React are __ by default.",
+      blanks: ["read-only"],
+      note: "Props"
     },
-    // Java Basics - Exception Handling
+    // React Basics - Lifecycle Methods
     {
       id: 9,
       type: "multiple-choice",
-      question: "Which block is always executed in exception handling?",
-      options: ["try", "catch", "finally", "throw"],
-      correctAnswers: ["finally"],
+      question: "Which lifecycle method is invoked immediately after a component is mounted?",
+      options: ["componentWillMount", "componentDidMount", "render", "componentWillUpdate"],
+      correctAnswers: ["componentDidMount"],
       multipleAnswers: false,
-      note: "Exception Handling"
+      note: "Lifecycle Methods"
     },
-    // Java Basics - Inheritance
+    // React Basics - State
     {
       id: 10,
       type: "fill-in-the-blanks",
-      question: "In Java, a class can extend another class using the __ keyword.",
-      blanks: ["extends"],
-      note: "Inheritance"
+      question: "In React, state is managed within a __.",
+      blanks: ["component"],
+      note: "State"
     },
-    // Java Basics - Interfaces
+    // React Basics - Hooks
     {
       id: 11,
       type: "fill-in-the-blanks",
-      question: "To implement an interface in Java, use the __ keyword.",
-      blanks: ["implements"],
-      note: "Interfaces"
+      question: "To use state in a functional component, use the __ hook.",
+      blanks: ["useState"],
+      note: "Hooks"
     },
-    // Java Basics - Keywords
+    // React Basics - Keywords
     {
       id: 12,
       type: "multiple-choice",
-      question: "Which of the following is a valid Java keyword?",
-      options: ["include", "virtual", "static", "define"],
-      correctAnswers: ["static"],
+      question: "Which of the following is a valid React keyword?",
+      options: ["useEffect", "include", "virtual", "define"],
+      correctAnswers: ["useEffect"],
       multipleAnswers: false,
       note: "Keywords"
     },
-    // Java Basics - Constructors
+    // React Basics - JSX
     {
       id: 13,
       type: "fill-in-the-blanks",
-      question: "Constructors in Java must have the same name as the __.",
-      blanks: ["class"],
-      note: "Constructors"
+      question: "JSX in React stands for __ JavaScript Syntax.",
+      blanks: ["XML"],
+      note: "JSX"
     },
-    // Java Basics - String Handling
+    // React Basics - Virtual DOM
     {
       id: 14,
       type: "fill-in-the-blanks",
-      question: "Strings in Java are immutable and are part of the __ package.",
-      blanks: ["java.lang"],
-      note: "String Handling"
+      question: "React uses a __ DOM for efficient UI updates.",
+      blanks: ["virtual"],
+      note: "Virtual DOM"
     },
-    // Java Basics - Collections
+    // React Basics - Keys
     {
       id: 15,
       type: "matching",
-      question: "Match the collection types with their characteristics",
-      leftItems: ["List", "Set", "Map"],
-      rightItems: ["Allows duplicate values", "Does not allow duplicate values", "Stores key-value pairs"],
+      question: "Match the React concepts with their characteristics",
+      leftItems: ["Keys", "Refs", "Props"],
+      rightItems: ["Unique identifiers", "Direct DOM access", "Data passed to components"],
       correctMatches: {
-        List: "Allows duplicate values",
-        Set: "Does not allow duplicate values",
-        Map: "Stores key-value pairs"
+        Keys: "Unique identifiers",
+        Refs: "Direct DOM access",
+        Props: "Data passed to components"
       },
-      note: "Collections"
+      note: "Keys"
     }
   ]
 };

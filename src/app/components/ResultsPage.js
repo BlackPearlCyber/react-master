@@ -13,7 +13,7 @@ export default function ResultsPage({ questions, userAnswers, score, totalQuesti
 
   const renderAnswer = (question, index) => {
     const questionIndex = indexOfFirstQuestion + index;
-    const userAnswer = userAnswers[questionIndex];
+    const userAnswer = userAnswers[questionIndex] || [];
 
     const CrossIcon = (
       <svg
@@ -40,25 +40,20 @@ export default function ResultsPage({ questions, userAnswers, score, totalQuesti
             <p className="font-semibold">Your answer:</p>
             {question.blanks.map((blank, i) => (
               <span key={i} className="inline-block mr-2">
-                {i > 0 && " "}
                 <span
                   className={
-                    blank.includes(userAnswer[i])
+                    Array.isArray(userAnswer) && blank.includes(userAnswer[i])
                       ? "text-green-600"
                       : "text-red-600 flex items-center"
                   }
                 >
                   {userAnswer[i] || "_____"}
-                  {blank !== userAnswer[i] && CrossIcon}
+                  {Array.isArray(userAnswer) && !blank.includes(userAnswer[i]) && CrossIcon}
                 </span>
               </span>
             ))}
             <p className="font-semibold mt-2">Correct answer:</p>
-            {question.blanks.map((blank, i) => (
-              <span key={i} className="text-green-600">
-                {blank}
-              </span>
-            ))}
+            <span className="text-green-600">{question.blanks.join(", ")}</span>
           </div>
         );
       case "multiple-choice":
@@ -68,17 +63,18 @@ export default function ResultsPage({ questions, userAnswers, score, totalQuesti
               Your answer:{" "}
               <span
                 className={
-                  question.correctAnswers.every((a) =>
-                    userAnswer?.includes(a)
-                  )
+                  Array.isArray(userAnswer) &&
+                  question.correctAnswers.every((a) => userAnswer.includes(a))
                     ? "text-green-600"
                     : "text-red-600 flex items-center"
                 }
               >
-                {userAnswer?.join(", ") || "No answer"}
-                {!question.correctAnswers.every((a) =>
-                  userAnswer?.includes(a)
-                ) && CrossIcon}
+                {Array.isArray(userAnswer) ? userAnswer.join(", ") : "No answer"}
+                {!Array.isArray(userAnswer) || !question.correctAnswers.every((a) =>
+                  userAnswer.includes(a)
+                )
+                  ? CrossIcon
+                  : null}
               </span>
             </p>
             <p className="font-semibold mt-2">Correct answer:</p>
@@ -120,16 +116,14 @@ export default function ResultsPage({ questions, userAnswers, score, totalQuesti
       <h2 className="text-2xl font-bold mb-4">Quiz Results</h2>
       <p className="mb-4">Your score: {score} out of {totalQuestions}</p>
       {currentQuestions.map((question, index) => {
-        // Check if the answer is correct or not for background color
         const questionIndex = indexOfFirstQuestion + index;
         const userAnswer = userAnswers[questionIndex];
         let isAnswerCorrect = false;
 
-        // Determine correctness based on the question type
         if (question.type === "fill-in-the-blanks") {
-          isAnswerCorrect = question.blanks.every((blank, i) => blank === userAnswer[i]);
+          isAnswerCorrect = question.blanks.every((blank, i) => Array.isArray(userAnswer) && blank.includes(userAnswer[i]));
         } else if (question.type === "multiple-choice") {
-          isAnswerCorrect = question.correctAnswers.every((a) => userAnswer?.includes(a));
+          isAnswerCorrect = Array.isArray(userAnswer) && question.correctAnswers.every((a) => userAnswer.includes(a));
         } else if (question.type === "matching") {
           isAnswerCorrect = Object.entries(userAnswer || {}).every(
             ([key, value]) => question.correctMatches[key] === value
@@ -138,12 +132,12 @@ export default function ResultsPage({ questions, userAnswers, score, totalQuesti
 
         return (
           <div
-            key={indexOfFirstQuestion + index}
+            key={index}
             className={`mb-6 p-4 border rounded ${
-              isAnswerCorrect ? "bg-white" : "bg-red-100"
+              isAnswerCorrect ? "bg-green-100" : "bg-red-100"
             }`}
           >
-            <h3 className="font-semibold mb-2">Question {indexOfFirstQuestion + index + 1}:</h3>
+            <h3 className="font-semibold mb-2">Question {questionIndex + 1}:</h3>
             <p className="mb-2">{question.question}</p>
             {renderAnswer(question, index)}
           </div>
